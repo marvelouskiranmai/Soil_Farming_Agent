@@ -1,0 +1,1061 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans JP", sans-serif;
+}
+body{
+    overflow-x: hidden;
+    background-image: url(soil.jpg);
+    background-size: cover;
+}
+.welcome{
+    height: 100vh;
+    width: 100%;
+    background-color: #9BEC00;
+    text-align: center;
+    color: black;
+    padding-top: 10rem;
+    line-height: 2.5rem;
+    overflow: hidden;
+    scroll-behavior: none;
+}
+.welcome img{
+    height: 10rem;
+    width: 10rem;
+    border: 1px solid #059212;
+}
+.welcome button{
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-left: 2rem;
+    height: 3rem;
+    width: 10rem;
+    color: white;
+    background-color: #05921392;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+}
+.welcome button:hover{
+    box-shadow: 0px 0px 5px #059212;
+    background-color: #059212;
+}
+
+/* signin */
+
+.Signin{
+  height: 18rem;
+  width: 15rem;
+  border: 2px solid black;
+  line-height: 2.5rem;
+  margin: 8rem;
+  margin-left: 20rem;
+  margin-top: 10rem;
+  padding: 2rem;
+}
+.Signin input{
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: inherit;
+    width: 13rem;
+}
+#forgotpass{
+    color: rgb(57, 110, 190);
+    text-decoration:1px rgb(57, 110, 190) underline;
+    margin-left:6rem ;
+}
+.login{
+    margin-left: 1rem;
+    height: 2rem;
+    width: 13rem;
+    border-radius: 10px;
+    background-color: #059212;
+    color: black;
+    font-size: 1rem;
+}
+#signupbut{
+    margin-top: 2rem;
+}
+.signupbut{
+    border: none;
+    color: rgb(57, 110, 190);
+    text-decoration:1px rgb(57, 110, 190) underline;
+    font-size: 1rem;
+    background-color: inherit;
+}
+@media (max-width:991px) {
+    
+    html{
+        font-size: 90%;
+    }
+   .Signin{
+    margin-left: 15rem;
+   }
+
+}
+@media (max-width:768px) {
+    html{
+        font-size: 85%;
+    }
+    .Signin{
+        margin-left: 10rem;
+        height: 20rem;
+        width: 18rem;
+    }
+    .Signin input{
+        width: 15rem;
+    }
+    
+}
+@media(max-width:600px){
+    html{
+        font-size: 85%;
+    }
+
+   .Signin{
+    margin-left: 5rem;
+   }
+}
+
+.messageDiv{
+    background-color: #9BEC00;
+    color: black;
+    padding-left: 0.5rem;
+    margin: 10px;
+    border-radius:5px ;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+    height: 2rem;
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+/* signup */
+.signup{
+    height: 19rem;
+    width: 15rem;
+    border: 2px solid black;
+    line-height: 2.5rem;
+    margin: 8rem;
+    margin-left: 20rem;
+    margin-top: 10rem;
+    padding: 2rem;
+    display: none;
+  }
+  .signup input{
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: inherit;
+    width: 13rem;
+}
+.login{
+    margin-left: 1rem;
+    height: 2rem;
+    width: 13rem;
+    border-radius: 10px;
+    background-color: #059212;
+    color: black;
+    font-size: 1rem;
+}
+#upbutton{
+    margin-left: 1rem;
+    height: 2rem;
+    width: 13rem;
+    border-radius: 10px;
+    background-color: #059212;
+    color: black;
+    font-size: 1rem;
+}
+
+@media (max-width:991px) {
+    
+    html{
+        font-size: 90%;
+    }
+   .signup{
+    margin-left: 15rem;
+   }
+
+}
+@media (max-width:768px) {
+    html{
+        font-size: 85%;
+    }
+    .signup{
+        margin-left: 10rem;
+        height: 20rem;
+        width: 18rem;
+    }
+    .signup input{
+        width: 15rem;
+    }
+    
+}
+@media(max-width:600px){
+    html{
+        font-size: 85%;
+    }
+
+   .signup{
+    margin-left: 5rem;
+   }
+}
+/* Admin sign in page */
+.AdminSignin{
+    height: 18rem;
+    width: 15rem;
+    border: 2px solid black;
+    line-height: 2.5rem;
+    margin: 8rem;
+    margin-left: 20rem;
+    margin-top: 10rem;
+    padding: 2rem;
+  }
+  .AdminSignin input{
+      border: none;
+      border-bottom: 1px solid black;
+      background-color: inherit;
+      width: 13rem;
+  }
+  #Adminforgotpass{
+      color: rgb(57, 110, 190);
+      text-decoration:1px rgb(57, 110, 190) underline;
+      margin-left:6rem ;
+  }
+  .Adminlogin{
+      margin-left: 1rem;
+      height: 2rem;
+      width: 13rem;
+      border-radius: 10px;
+      background-color: #059212;
+      color: black;
+      font-size: 1rem;
+  }
+  @media (max-width:991px) {
+    
+    html{
+        font-size: 90%;
+    }
+   .AdminSignin{
+    margin-left: 15rem;
+   }
+
+}
+@media (max-width:768px) {
+    html{
+        font-size: 85%;
+    }
+    .AdminSignin{
+        margin-left: 10rem;
+        height: 20rem;
+        width: 18rem;
+    }
+    .AdminSignin input{
+        width: 15rem;
+    }
+    
+}
+@media(max-width:600px){
+    html{
+        font-size: 85%;
+    }
+
+   .AdminSignin{
+    margin-left: 5rem;
+   }
+}
+
+.AdmessageDiv{
+    background-color: #9BEC00;
+    color: black;
+    padding-left: 0.5rem;
+    margin: 10px;
+    border-radius:5px ;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+    height: 2rem;
+    width: 15rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+/* Homepage */
+.header{
+    height:10rem;
+    width: 100%;
+    background-color: #059212;
+    color: white;
+    padding-left: 2rem;
+}
+.header nav{
+    margin-top: 3rem;
+    /* width:50rem; */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-end;
+    /* border: 1px solid black; */
+    color: white;
+    text-decoration: none;
+
+}
+.bar{
+    width: 65%;
+}
+.header nav a{
+    color: white;
+    text-decoration: none;
+}
+.bar:hover{
+    text-decoration: underline  #F3FF90;
+    color:  #F3FF90;
+}
+#active{
+    text-decoration: underline  #F3FF90;
+    color: #F3FF90;
+}
+.profile button {
+    color: white;
+    align-self: flex-end;
+    border: none;
+    font-size: larger;
+    width: 2rem;
+    height: 2rem;
+    background-color: inherit;
+
+}
+.profile{
+    width: 30%;
+}
+
+@media(max-width:600px){
+    .numbertext img{
+       margin-left: 2rem;
+       margin-right: 5rem;
+       width:2rem;
+    }
+}
+/* Description */
+.description{
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #9BEC00;
+    color:black;
+    line-height: 2;
+}
+/* .div:hover{
+    animation: rise 3s linear 0s infinite alternate;
+}
+@keyframes rise{
+    0%{
+        margin-left:10px;
+    }
+    100%{
+        margin-left:30px;
+    }
+} */
+#card1{
+    margin-left: 10rem;
+    margin-top: 2rem;
+    border: none;
+    background-color: inherit;
+}
+.seemore{
+    padding: 3rem;
+    line-height: 2rem;
+    background-color: #F7F9F2;
+    color: black;
+}
+/* #pagetwo{
+    display: none;
+} */
+.seemore h2{
+    color: #059212;
+}
+.types{
+    padding: 1.5rem;
+    color: #059212;
+    font-size: larger;
+}
+.list{
+    padding-left: 1.5rem;
+    color: black;
+}
+.croplist{
+    padding-left: 2rem;
+   color: black;
+}
+/* Contact */
+#contactpage{
+    height:16rem;
+    width:23rem;
+    border:2px solid #059212;
+    margin:30rem;
+    margin-top: 5rem;
+    background-color: #9BEC00;
+    color: black;
+    border-radius: 30px;
+    padding: 5rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    line-height: 2rem;
+    display: none;
+}
+#contactpage1{
+    height:10rem;
+    width:23rem;
+    border:2px solid #059212;
+    margin:30rem;
+    margin-top: 5rem;
+    background-color: #9BEC00;
+    color: black;
+    border-radius: 30px;
+    padding: 5rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    line-height: 2rem;
+    display: none;
+    margin-left: 25rem;
+}
+
+#contactpage h2,#contactpage1 h2{
+    margin-bottom: 1.5rem;
+}
+@media(max-width:1200px){
+   
+   
+    #contactpage1{
+        margin-left: 18rem;
+    }
+    
+}
+@media(max-width:991px){
+    #contactpage1{
+        margin-left: 15rem;
+    }
+}
+@media(max-width:768px){
+    #contactpage1{
+        margin-left:8rem;
+    }
+}
+@media(max-width:600px){
+    #contactpage1{
+        margin-left:4rem;
+        width: 50%;
+    }
+}
+#logout{
+    margin-top: 1.3rem;
+    height: 2rem;
+    width: 10rem;
+    font-size: 1rem;
+    background-color: #059212;
+    color: white;
+    border-radius: 30px;
+    border: none;
+}
+#logout:hover{
+    box-shadow: 0px 0px 8px #059212;
+}
+
+/* footer */
+.icons i{
+    color:white;
+    display: flex;
+    align-items: center;
+    padding: 0.65rem;
+}
+.icons a{
+    text-decoration: none;
+}
+.linkedin,.github{
+    height:2.5rem;
+    width:2.5rem;
+    border-radius: 100%;
+    border: 2px solid white;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+.linkedin i{
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+    font-size: larger;
+}
+.github i{
+    padding-top: 0.55rem;
+    padding-left: 0.55rem;
+    font-size: larger;
+}
+.icons{
+    display: flex;
+    width:100%;
+    justify-content: center;
+}
+footer{
+    background-color: #9BEC00;
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+    padding-top: 1rem;
+}
+
+/* Admin page */
+#soildetails,#soildetailsuser{
+    padding: 3rem;
+    background-color:  #97cd0e;
+    width:100vh;
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+    border-radius: 30px;
+    display: block;
+}
+#soildetails button,#soildetailsuser button{
+    width:80%;
+    height: 3.5rem;
+    border: none;
+    color: white;
+    background-color: inherit;
+    font-size: 2rem;
+    text-align: start;
+    margin-bottom: 2rem;
+}
+
+#insert i,#search i,#soilinfo i,#searchsoilinfo i,#centername i,#searchdistributorinfo i{
+   color:#059212;
+   border-radius: 50%;
+   font-size: 3rem;
+}
+#searchsoilinfo i,#searchsoil i,#searchdistributorinfo i,#searchdistributor i{
+    color:#059212;
+    border-radius: 50%;
+    font-size: 2.5rem; 
+}
+#soildetails button:hover{
+    border: 2px solid #059212;
+    box-shadow: 0px 0px 8px #059212;
+}
+#soildetailsuser button:hover{
+    border: 2px solid #059212;
+    box-shadow: 0px 0px 8px #059212;
+}
+
+/* soil insertion page */
+#soilinsertion{
+    padding: 3rem;
+    background-color:  #97cd0e;
+    width: 30%;
+    height: 25rem;
+    margin: 3rem;
+    margin-left: 25rem;
+    display: none;
+}
+#soilinsertion h2{
+    text-align: center;
+    color:rgb(0, 66, 0);
+    font-size: 2rem;
+}
+#insetionform{
+    margin: 3rem;
+    margin-top: 1rem;
+    height: 10rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+#insetionform label{
+    margin-top: 1.5rem;
+}
+#insetionform input{
+    border: none;
+    border-bottom: solid darkgreen;
+    background-color: inherit;
+    width: 20rem;
+    font-size: 1.3rem;
+}
+#insertbut{
+    margin-top: 1.5rem;
+    height:3rem;
+    width: 10rem;
+    margin-left: 4rem;
+    border-radius: 30px;
+    background-color: #059212;
+    color:white;
+    border: none;
+    font-size: 1.3rem;
+}
+#insertbut:hover{
+    box-shadow: 0px 0px 8px darkgreen;
+}
+
+#messages{
+    background-color: #9BEC00;
+    color: black;
+    padding-left: 0.5rem;
+    margin: 10px;
+    border-radius:5px ;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeOut 7s forwards;
+    height: 3rem;
+    width: 20rem;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+/* Search page */
+#viewsoil,#cropcreate,#searchSection,#dataFormSection,#distributioncenter,#searchCenter,#searchcrop,#viewSandDetails,#viewDistributorDetails
+{
+    padding: 3rem;
+    background-color:  #97cd0e;
+    width: 35%;
+    height: 30rem;
+    margin: 3rem;
+    margin-left: 25rem;
+    /* display: none; */
+}
+#searchCenter{
+    height:35rem
+}
+#viewSandDetails{
+    height: 55rem;
+}
+#viewDistributorDetails{
+    height: 35rem;
+}
+#viewsoil h2,#cropcreate h2,#searchSection h2,#distributioncenter h2,#searchCenter h2,#searchcrop h2,#viewSandDetails h2,#viewDistributorDetails h2
+{
+    text-align: center;
+    color:rgb(0, 66, 0);
+    font-size: 2rem;
+}
+
+#searchBar,#myInput,#mycrop{
+    height: 2rem;
+    width: 20rem;
+    background-color: inherit;
+    border: 2px solid rgb(0, 67, 0);
+    margin-top: 2rem;
+    margin-left:2rem;
+}
+#searchbtn,#searchBtn1,#searchBtn2{
+    color:darkgreen;
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    background-color: inherit;
+    border: none;
+}
+#searchbtn:hover{
+    box-shadow: 0px 0px 8px darkgreen;
+    border: 2px solid darkgreen;
+}
+#searchBtn1:hover{
+    box-shadow: 0px 0px 8px darkgreen;
+    border: 2px solid darkgreen;
+}
+#searchBtn2:hover{
+    box-shadow: 0px 0px 8px darkgreen;
+    border: 2px solid darkgreen;
+}
+
+/* crop create */
+#form,#form2,#form3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#cropcreate,#searchcrop{
+    height: 56rem;
+}
+#soiltypebtn,#waterbtn,#soiltypebtnuser,#waterbtnuser,#croptypebtnuser,#locationbtnuser{
+    margin-top: 2rem;
+    /* margin-bottom: 2rem; */
+    width: 10rem;
+    border: 2px solid darkgreen;
+    background-color: inherit;
+}
+#crop,#cropdes,#croppro1,#croppro2,#croppro3,#croppro4,#croppro5,#croppro6,#subcrop,#subcropdes,#Compname,#name,#Cropbuy,#locationname,#address,#phoneno{
+    /* margin-top:1rem; */
+    border: none;
+    border-bottom: 1px solid darkgreen;
+    background-color: inherit;
+}
+#form label,#form2 label{
+    color:darkgreen;
+    margin-top: 1rem;
+}
+
+#submitform,#submitform2{
+    margin-top: 1.5rem;
+    width:50%;
+    color:white;
+    background-color: #059212;
+    border-radius: 20px;
+    height: 2rem;
+    margin-left: 5rem;
+    border: none;
+}
+/* View soil info */
+#searchSection{
+    height: 65rem;
+}
+#updateSoilForm,#updateCropForm{
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+#updateSoilForm input,#updateCropForm input{
+    background-color: inherit;
+    border:none;
+}
+#updateSoilForm label,#updateCropForm label{
+    color: darkgreen;
+}
+#update,#delete,#update2,#delete2{
+    margin-top: 2.5rem;
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 20px;
+    background-color: darkgreen;
+    color: white;
+}
+#delete,#delete2{
+    background-color: red;
+}
+#soildetails {
+    display: block;
+}
+.back{
+    margin-top: 1rem;
+    background-color: inherit;
+    border: none;
+    display: block;
+}
+.back i{
+    color: darkgreen;
+    font-size: 1.5rem;
+}
+#searchResults,#viewCropResults{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    line-height: 2rem;
+}
+.navbar{
+    font-size: 1.5rem;
+}
+
+@media(max-width:1200px){
+   
+    html{
+        font-size: 90%;
+        /* background-color: #9BEC00; */
+    }
+    #searchBar,#myInput,#mycrop{
+        width: 18rem;
+    }
+    #searchResults,#viewSearchResults{
+        margin-left: 2rem;
+        margin-top: 2rem;
+        line-height: 2rem;
+    }
+   #cropcreate,#searchSection,#distributioncenter,#searchCenter{
+         margin-left: 18rem;
+    }
+    
+    #searchSection{
+        height:70rem
+    }
+    #soilinsertion{
+        width: 40%;
+       
+    }
+}
+@media (max-width:991px) {
+    
+    html{
+        font-size: 90%;
+        /* background-color: red; */
+    }
+    #viewsoil{
+        width: 45%;
+        margin-left: 15rem;
+    }
+    #searchResults,#viewSearchResults{
+        margin-left: 2rem;
+        margin-top: 2rem;
+        line-height: 2rem;
+    }
+    #soildetails{
+        margin-left: 3rem;
+    }
+    #soilinsertion{
+        padding: 1.5rem;
+        width: 48%;
+        margin-left: 15rem;
+    }
+    #insetionform input{
+        width: 18rem;
+    }
+    #cropcreate,#searchSection,#distributioncenter,#searchCenter{
+        width: 45%;
+        margin-left: 10rem;
+    }
+    #searchCenter{
+        height:38rem
+    }
+}
+@media (max-width:768px) {
+    html{
+        font-size: 85%;
+        /* background-color: aqua; */
+    }
+    #viewsoil{
+        width: 55%;
+        margin-left: 10rem;
+    }
+     
+    #searchBar{
+        margin-left:0rem;
+    }
+    
+    #soildetails{
+        padding: 3rem;
+        padding-right: 0;
+        width:73vh;
+    }
+    #soilinsertion{
+        padding: 1.5rem;
+        width: 52%;
+        margin-left: 12rem;
+    }
+    #insetionform input{
+        width: 18rem;
+    }
+    #cropcreate,#searchSection,#distributioncenter,#searchCenter{
+        margin-left:8rem;
+        width: 60%;
+        font-size: larger;
+        
+    }
+    #distributioncenter{
+        height:35rem
+    }
+
+}
+@media(max-width:600px){
+    html{
+        font-size: 85%;
+       
+
+    }
+    body{
+        background-image: none; 
+    }
+    #viewsoil{
+        padding: 3rem;
+        width: 80%;
+        height: 30rem;
+        margin: 3rem;
+    }
+    
+    #viewsoil h2
+    {
+        margin-left: 0;
+        margin-top: 2rem;
+        text-align: start;
+        
+    }
+    
+    #soildetails{
+        width:65vh;
+        margin-top: 3rem;
+        margin-left: 2.2rem;
+        margin-bottom: 3rem;
+        
+    }
+    #soildetails button{
+        font-size: 1.8rem;    
+    }
+    #searchdistributorinfo{
+        width: 40rem;
+    }
+    #soilinsertion{
+        padding: 3rem;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        height: 100vh;
+    }
+    #soilinsertion h2{
+        margin-top: 2rem;
+        margin-left: -10rem;
+    }
+    #insetionform input{
+        width: 20rem;
+        
+    }
+     
+    #insertbut{
+        margin-top: 2.5rem;
+        height:3rem;
+        width: 15rem;
+        margin-left: 4rem;
+
+    } 
+    #cropcreate,#searchSection,#distributioncenter,#searchCenter{
+        padding-top: 3rem;
+        width: 80%;
+        margin-left:2rem;
+        font-size: larger;
+
+    }
+    #cropcreate h2,#searchSection h2,#distributioncenter h2,#searchCenter h2{
+        margin-top: 2rem;
+        text-align: start;
+    }
+    
+   
+}
+
+#searchForm,#searchForm1{
+    display: flex;
+    flex-direction: column;
+}
+
+#searchBtn,#searchBtndis{
+    width:15rem;
+    background-color: #059212;
+    color: white;
+    border: none;
+    margin-top: 2rem;
+    border-radius: 10px;
+    height: 2rem;
+    font-size: 1rem;
+    margin-left: 3rem;
+}
+#searchBtn:hover{
+    box-shadow: 0px 0px 8px darkgreen;
+    border: 1px solid rgb(0, 66, 0);
+}
+#searchBtndis:hover{
+    box-shadow: 0px 0px 8px darkgreen;
+    border: 1px solid rgb(0, 66, 0);
+}
+#sandDetails,#distributorDetails{
+    margin-top: 3rem;
+    line-height: 2rem;
+}
+.mySlides img{
+width:100%;
+height: 30rem;
+border-radius: 30px;
+ 
+}
+
+@media(max-width:1200px){
+   
+    html{
+        font-size: 90%;
+        /* background-color: #9BEC00; */
+    }
+    #contactpage{
+        margin-left: 23rem;
+    }
+    #sandDetails,#distributorDetails{
+        margin-left: 2rem;
+        margin-top: 2rem;
+        line-height: 2rem;
+    }
+   #viewDistributorDetails{
+         margin-left: 18rem;
+    }
+    #viewSandDetails{
+        margin-left: 28rem;
+    }
+    #viewSandDetails{
+        height:60rem
+    }
+    #viewDistributorDetails{
+        height:40rem
+    }
+}
+@media (max-width:991px) {
+    
+    html{
+        font-size: 90%;
+        /* background-color: red; */
+    }
+    #contactpage{
+        margin-left: 17rem;
+    }
+   
+   
+    
+   #viewDistributorDetails{
+        width: 45%;
+        margin-left: 10rem;
+    }
+    #viewSandDetails{
+        margin-left: 20rem;
+        width: 45%;
+    }
+    
+}
+@media (max-width:768px) {
+    html{
+        font-size: 85%;
+        /* background-color: aqua; */
+    }
+    #contactpage{
+        margin-left: 13rem;
+    }
+    .mySlides img{
+        width:90%;
+        height: 30rem;
+        border-radius: 30px;
+        margin:2rem ;
+        }
+   
+   
+    #viewSandDetails,#viewDistributorDetails{
+        margin-left:8rem;
+        width: 60%;
+        font-size: larger;
+        
+    }
+    
+
+}
+@media(max-width:600px){
+    
+    
+    #contactpage{
+        margin-left: 6rem;
+    }
+
+   
+    
+    #viewSandDetails,#viewDistributorDetails{
+        padding-top: 3rem;
+        width: 80%;
+        margin-left:2rem;
+        font-size: larger;
+
+    }
+    #viewSandDetails h2,#viewDistributorDetails h2{
+        margin-top: 2rem;
+        text-align: start;
+    }
+    
+   
+}

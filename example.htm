@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div id="container">
+        <!-- Register Form -->
+        <section id="registerSection">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <!-- Login Form -->
+        <section id="loginSection">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- View Sand Details -->
+        <section id="viewSandDetails">
+            <h2>Sand Details</h2>
+            <form id="searchForm">
+                <select id="soiltypebtnuser" required>
+                    <option value="select">Soil type</option>
+                </select>
+                <select id="waterbtnuser" required>
+                    <option value="select">Water Supply</option>
+                    <option>Continous Water Supply</option>
+                    <option>Seasonal Rainfall</option>
+                </select>
+                <button type="button" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search</button>
+            </form>
+            <div id="sandDetails"></div>
+        </section>
+
+        <!-- View Distributor Details -->
+        <section id="viewDistributorDetails">
+            <h2>Distributor Details</h2>
+            <button id="loadDistributorDetails">Load Distributor Details</button>
+            <div id="distributorDetails"></div>
+        </section>
+
+        <button id="logout">Logout</button>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

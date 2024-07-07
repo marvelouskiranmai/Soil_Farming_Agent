@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebaseauth.js"></script>
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+    body {
+        background-image: url("growing-plant-on-soil-against-white-background_23-2147817211.avif");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: 100% 100%;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+       
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form class="Signin" id="Signin">
+            <h2 style="text-align: center;">Sign In</h2>
+            <div id="signInMessage" class="messageDiv" style="display: none;"></div>
+            <label for="emailsigin"><i class="fa-solid fa-envelope"></i></label>
+            <input type="email" name="useremail" id="emailsigin" placeholder="Email" required>
+            <br>
+            <label for="passsigin"><i class="fa-solid fa-lock"></i></label>
+            <input type="password" name="userpassword" id="passsigin" placeholder="Password" required>
+            <br>
+            <label id="forgotpass" style="cursor: pointer;">Forgot Password?</label>
+            <br>
+            <button type="submit" class="login"id="loginbut">Login</button>
+            <br>
+            <label for="signupbut" style="font-size: 1rem; padding-right: -0.75rem;">Don't have an account?</label>
+            <a href="#"><button type="button" id="signupbut" class="signupbut">Signup</button></a>
+        </form>
+        <form action="#" class="signup" id="signup">
+            <h2 style="text-align: center;">Create An Account</h2>
+            <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
+            <br>
+            <label for="fname"><img width="18" height="18" src="https://img.icons8.com/android/24/user.png" alt="user"/></label>
+            <input type="name" name="userfirstname" id="fname" placeholder="First name" required>
+            <br>
+            <label for="lname"><img width="18" height="18" src="https://img.icons8.com/android/24/user.png" alt="user"/></label>
+            <input type="name" name="userlastname" id="lname" placeholder="Last name" required>
+            <br>
+            <label for="emailsignup"><i class="fa-solid fa-envelope"></i></label>
+            <input type="email" name="useremailsignup" id="emailsignup" placeholder="Email" required>
+            <br>
+            <label for="passsignup"><i class="fa-solid fa-lock"></i></label>
+            <input type="password" name="userpasswordsignup" id="passsignup" placeholder="Password" required>
+            <br>
+            <button type="submit" class="signupbutton" id="upbutton">Signup</button>
+        </form>
+    </div>
+    <script src="soil.js"></script>
+</body>
+</html>

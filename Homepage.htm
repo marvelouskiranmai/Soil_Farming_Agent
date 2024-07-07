@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+*{
+    font-family: "Noto Sans JP", sans-serif;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 50rem;
+  position: relative;
+  margin: auto;
+  margin-top: 2rem;
+
+}
+
+/* Caption text */
+/* .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+} */
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: inherit;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.maincontent{
+    overflow-x: hidden;
+}
+/* On smaller screens, decrease text size */
+/* @media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+} */
+
+/* #pageone {
+    display: block;
+} */
+#pagetwo {
+    display: none;
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+@media (max-width:768px) {
+    
+    #soildetails{
+        width:40rem;
+    }
+   
+}
+
+@media (max-width:600px) {
+    body{
+        background-color:#97cd0e;
+    }
+
+}
+</style>
+<body>
+    <header class="header">
+        <h2 style="text-align: center;padding-top: 2rem;">
+            Soil Farming Agent&nbsp;&nbsp;<i class="fa-solid fa-wheat-awn"></i>
+        </h2>
+        <nav class="navbar">
+            <a href="#home" class="bar active">Home</a>
+            <a href="#soildetails" class="bar">Crop Guide</a>
+            <!-- <a href="#purchase" class="bar">Purchase</a> -->
+            <!-- <a href="#Weather" class="bar">Weather</a> -->
+            <!-- <a href="#Agriculturists" class="bar">Agriculturists</a> -->
+            <div class="profile">
+            <button class="contact" id="profilebut"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="pageone">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="pexels-quang-nguyen-vinh-222549-6129010.jpg">
+                <!-- <div class="text">Caption Text</div> -->
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="bg-corn_field-001-naramit.jpg">
+                <!-- <div class="text">Caption Two</div> -->
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="download.jpg" >
+                <!-- <div class="text">Caption Three</div> -->
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="download 2.jpg" >
+                <!-- <div class="text">Caption Four</div> -->
+            </div>
+        </div>
+        <br>
+        <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span> 
+        </div>
+        <div class="description">
+            <h2 style="text-align:center; color:#006769;margin-bottom: 1rem;">Your Farming Companion!</h2>
+            <p class="content1"><b>Farming is not merely a profession,it's a way of life..</b></p>
+            <p class="content1">Soil is a crucial component in agriculture, serving as the foundation for crop growth and productivity. Different types of soil possess unique characteristics that determine their suitability for various crops. Understanding these traits is essential for optimizing agricultural practices and ensuring successful crop yields.</p>
+            <h2 style="text-align:center; color:#006769;margin-top: 2rem;">About Us</h2>
+            <p class="content1">The Soil Farming Agent application is designed to provide comprehensive information about various soil types and their best-suited crops. The application allows users to view detailed soil characteristics and crop requirements, helping farmers and agricultural enthusiasts make informed decisions about their planting strategies.</p>
+        </div>
+        <div class="details">
+            <h2 style="margin-left: 2rem; margin-top: 2rem;">See for more details</h2>
+            <button id="card1">
+                    <!-- <div class="div" style="display: block;text-align: center;margin-top: 2rem;"> -->
+                <img src="login.jpg" style="height:15rem;width:15rem;border-radius: 20px;">
+            </button>
+            <p style="margin-left: 14.5rem;">Types of Soil</p>
+                    <!-- </div> -->
+        </div>
+    </section>
+
+<section class="seemore" id="pagetwo">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('home')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+              Back to Homepage 
+            </span>
+          </div>
+        <h2>What is Soil?</h2>
+        <br>
+        <p>Soil is the most important aspect for our life. The economy based sectors include soil in India. India is a land of vast dimensions with different conditions of geology, relief, climate and vegetation. Here, you can get different types of soil cultivation. Therefore, India has a large diversity of soil groups which include different types of soil. All the Soils are markedly different from each other. Various criteria have been applied to classify Indian soils like Geology, relief, fertility, chemical composition and physical composition and so on. Soil formation is so good in a particular climate that each climate type has its own soil.</p>
+        <br>
+        <h2>What Is the Role of Different Types of Soil In Agriculture?</h2>
+        <br>
+        <p>Soil is a very important material or we can say that it is the foundation of agriculture. It is the loose surface that covers most agricultural land. This material is a mixture of inorganic particles and organic matter. Soil provides structural support to plants used in farming. The soil is the mixture of organic matter, minerals, gases, liquids, and organisms that together support life.</p>
+        <br>
+        <p>Soils have different chemical and physical properties. Each soil type has specific strengths and weaknesses for agricultural production. To differentiate soils is of great help from their physical properties. Physical properties mean what we can see and touch like texture, colour, depth, structure, porosity (the space between the particles) and stone content.</p>
+        <br>
+        <h2>Types of Soil:</h2>
+        <ul class="types">
+            <li>
+                <h2>Alluvial Soil</h2>
+                <br>
+                <p style="color: black;">The soil is the most popular type, which is widely available in India. Alluvial Soils are the soil stored by surface water. Thus, they found regularly along floodplains, deltas and rivers. The alluvial soil composition of Coastal districts known as Riverine. Further, it eliminates supplements and different residues from the streaming water accordingly and develops the water quality for downstream regions.</p>
+                <ul class="list">
+                    <li>
+                        <p><b>Characteristics:</b> Alluvial soil is a mixture of sandy loam soil and clay soil. It is quick drainage in nature. This type of soil is rich in organic matter and phosphoric acid. Also, it is weak in potash and nitrogen.</p> 
+                    </li>
+                    <li>
+                       <p><b>Regions or States:</b>This type of soil is available in delta areas of North India. It covers over 35% of total Indian land.</p>
+                    </li>
+                    <li>
+                        <p><b>Best Soil For Growing Crops:</b>It is perfect for 
+                            <ul class="croplist">
+                                <li>cotton</li>
+                                <li>wheat</li>
+                                <li>sorghum</li>
+                                <li>Bajra</li>
+                                <li>maize</li>
+                                <li>barley</li>
+                                <li>jute</li>
+                                <li>tobacco</li>
+                                <li>green and black gram</li>
+                                <li>chickpea</li>
+                                <li>pigeon pea</li>
+                                <li>soybean</li>
+                                <li>sesame</li>
+                                <li>groundnut</li>
+                                <li>linseed and any oilseed</li>
+                                <li>fruit,vegetable</li>
+                            </ul>
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <br><br>
+            <li>
+                <h2>Black Soil</h2>
+                <br>
+                <p style="color: black;">It is also known as Cotton or Regur Soil. Black soils are mineral soils which have a dark surface, enhanced with natural carbon that is 25 cm deep.</p>
+                <ul class="list">
+                    <li>
+                        <p><b style="color:#059212;">Characteristics:</b>It is available in Gujarat, Madhya Pradesh, Maharashtra, Andhra Pradesh, Tamil Nadu, and Telangana. Black soil majorly found in the river valley of rivers Narmada, Godavari, Tapi, and Krishna.</p> 
+                    </li>
+                    <li>
+                       <p><b style="color:#059212;">Regions or States:</b>This type of soil is available in delta areas of North India. It covers over 35% of total Indian land.</p>
+                    </li>
+                    <li>
+                        <p><b style="color:#059212;">Best Soil For Growing Crops:</b>It is perfect for 
+                            <ul class="croplist">
+                                <li>cotton</li>
+                                <li>rice</li>
+                                <li>cereals</li>
+                                <li>Jowar</li>
+                                <li>sugarcane</li>
+                                <li>linseed</li>
+                                <li>sunflower</li>
+                                <li>groundnut</li>
+                                <li>tobacco</li>
+                                <li>millets</li>
+                                <li>citrus fruits</li>
+                                <li>oilseed crops of all kinds</li>
+                                <li>vegetables</li>
+                            </ul> 
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <br><br>
+            <li>
+                <h2> Red & Yellow Soil </h2>
+                <br>
+                <p style="color: black;">The other one on the list of soil types is Red and Yellow Soil. This soil type considered the best soil for agriculture. Red soil is a sort of soil created in a warm, moist, temperate environment with a slight natural layer. The parent material is stone, and the shading is red because of iron oxide, which happens as haematite. When it occurs in a hydrated structure, it becomes limonite yellow in the shade.</p>
+                <ul class="list">
+                    <li>
+                        <p><b style="color: #059212;">Characteristics:</b> This soil type has iron oxide; that's why it is red. It is formed while metamorphic rocks weather away. Red & yellow soil is loaded with potash and low in nitrogen, magnesium, lime, phosphorus, and organic matter. This soil is sandy in texture. </p> 
+                    </li>
+                    <li>
+                       <p><b style="color:#059212 ;">Regions or States:</b>It is widely found in the Deccan plateau, Western Ghat, Orissa, and Chhattisgarh.</p>
+                    </li>
+                    <li>
+                        <p><b style="color:  #059212;">Best Soil For Growing Crops:</b>It is perfect for 
+                            <ul class="croplist">
+                                <li>Groundnut</li>
+                                <li>potato</li>
+                                <li>maize/corn</li>
+                                <li>rice</li>
+                                <li>ragi</li>
+                                <li>wheat</li>
+                                <li>millets</li>
+                                <li>pulses</li>
+                                <li>sugarcane</li>
+                                <li>oilseeds</li>
+                                <li>fruits like citrus, orange, mango,</li>
+                                <li>vegetables</li>
+                            </ul> 
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <br><br>
+            <li>
+                <h2>Laterite Soil</h2>
+                <br>
+                <p style="color: black;">The following soil on the list is Laterite Soil. Laterite soil layer loaded in iron oxide and gotten from a wide assortment of rocks enduring under unequivocally oxidizing and filtering conditions. It structures in tropical and subtropical locales where the environment is moist.</p>
+                <ul class="list">
+                    <li>
+                        <p><b style="color:  #059212;">Characteristics:</b> It is acidic soil and rich in iron. This kind of soil is used to make bricks because of its high iron content. It is low in organic matter, calcium, nitrogen, and phosphate. </p> 
+                    </li>
+                    <li>
+                       <p><b style="color: #059212;">Regions or States:</b>Tamil Nadu, Karnataka, Kerala, Madhya Pradesh, Orissa, and Assam.</p>
+                    </li>
+                    <li>
+                        <p><b style="color: #059212;">Best Soil For Growing Crops:</b>It is perfect for 
+                            <ul class="croplist">
+                                <li>Cotton</li>
+                                <li>wheat</li>
+                                <li>rice</li>
+                                <li>pulses</li>
+                                <li>rubber</li>
+                                <li>tea</li>
+                                <li>coffee</li>
+                                <li>coconut</li>
+                                <li>cashews</li>
+                            </ul>  
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section id="contactpage" style="display:none;">
+        <h2><i class="fa-solid fa-user" style="font-size: larger;"></i>&nbsp;Profile</h2>
+        <div>First Name:<span id="loggedUserFName"></span></div>
+        <div>Last Name:<span id="loggedUserLName"></span></div>
+        <div>Email:<span id="loggedUserEmail"></span></div>
+        <button id="logout">Logout&nbsp;<i class="fa-solid fa-right-from-bracket"></i></button>
+    </section>
+   
+        <section id="soildetails" style="display: none;">
+            <button id="searchsoilinfo"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search Soil Info</button>
+            <button id="searchdistributorinfo"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search Distributor Info</button>
+        </section>
+        <section id="viewSandDetails" style="display: none;">
+            <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+                <span class="popuptext" id="myPopup">
+                Back to Homepage 
+                </span>
+            </div>
+            <h2>Crop Details</h2>
+            <form id="searchForm">
+                <select id="soiltypebtnuser" required>
+                    <option value="select">Soil type</option>
+                </select>
+                <select id="waterbtnuser" required>
+                    <option value="select">Water Supply</option>
+                    <option>Continous Water Supply</option>
+                    <option>Seasonal Rainfall</option>
+                </select>
+                <button type="button" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search</button>
+            </form>
+            <div id="sandDetails"></div>
+        </section>
+        
+        <section id="viewDistributorDetails" style="display: none;">
+            <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+                <span class="popuptext" id="myPopup">
+                Back to Homepage 
+                </span>
+            </div>
+            <h2>Distributor Details</h2>
+            <form id="searchForm1">
+                <select id="croptypebtnuser" required>
+                    <option value="select">Crop type</option>
+                </select>
+                <select id="locationbtnuser" required>
+                    <option value="select">Location</option>
+                </select>
+                <button type="button" id="searchBtndis"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search</button>
+            </form>
+            <div id="distributorDetails"></div>
+        </section>
+   
+    <footer id="footer">
+        <p><b>Email-id:</b>kiranmaiakula04@gmail.com</p>
+        <p><b>Contact-me:</b>9550665521</p>
+        <div class="icons">
+            <div class="linkedin"><a href=www.linkedin.com/in/kiranmai-akula-98971925a><i class="fa-brands fa-linkedin-in"></i></a></div>
+            <div class="github"><a href="https://github.com/marvelouskiranmai"><i class="fa-brands fa-github"></i></a></div>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll('header nav a');
+            const buttons = {
+                'searchsoilinfo':'viewSandDetails',
+                'searchdistributorinfo':'viewDistributorDetails'
+                // Add other buttons if needed
+            };
+    
+            for (const [btnId, sectionId] of Object.entries(buttons)) {
+                document.getElementById(btnId).addEventListener('click', () => showSection(sectionId));
+            }
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    showSection(targetId);
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+        });
+    
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        const homeButton=document.getElementById('card1');
+        const nextPage=document.getElementById('pagetwo');
+        const pageOne=document.getElementById('home');
+
+        homeButton.addEventListener('click',function(){
+            pageOne.style.display="none";
+            nextPage.style.display="block";
+        });
+    </script>
+
+    <script src="contact.js" type="module"></script>
+    <!-- <script src="app.js" type="module"></script> -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+        import { getDatabase, ref, set, get,update,remove,child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+      
+        const firebaseConfig = {
+            apiKey: "AIzaSyDansjoKrJPA8hDv3CqRYjPz8l2e-N2Wus",
+            authDomain: "admin-page-f6841.firebaseapp.com",
+            projectId: "admin-page-f6841",
+            storageBucket: "admin-page-f6841.appspot.com",
+            messagingSenderId: "1005432635418",
+            appId: "1:1005432635418:web:ef35f6ddb14e82e6d5d1a3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getDatabase();
+       
+
+
+        const cropdet=document.getElementById('viewSandDetails');
+        const Details=document.getElementById('soildetails');
+        const center=document.getElementById('viewDistributorDetails');
+        document.getElementById('searchsoilinfo').addEventListener('click', () => {
+            cropdet.style.display = 'block';
+            Details.style.display = 'none';
+        });
+        document.getElementById('searchdistributorinfo').addEventListener('click', () => {
+            center.style.display = 'block';
+            Details.style.display = 'none';
+        });
+
+
+        const soilSelectuser = document.getElementById('soiltypebtnuser');
+
+    async function GetSoiltypeuser() {
+    const dbRef = ref(db);
+    try {
+        const snapshot = await get(child(dbRef, 'SoilType/'));
+        if (snapshot.exists()) {
+            soilSelectuser.innerHTML = '<option value="select">Soil type</option>'; // Reset options
+            const soilTypes = snapshot.val();
+            for (const key in soilTypes) {
+                const option = document.createElement('option');
+                option.value = soilTypes[key].Soiltype;
+                option.textContent = soilTypes[key].Soiltype;
+                soilSelectuser.appendChild(option);
+            }
+            soilSelectuser.disabled = false;
+        } else {
+            alert("No soil types found in the database.");
+        }
+    } catch (error) {
+        console.error("Error fetching soil types:", error);
+    }
+}
+
+window.addEventListener('load', GetSoiltypeuser);
+
+function searchSoilInfo() {
+    const soilType = document.getElementById('soiltypebtnuser').value;
+    const waterSupply = document.getElementById('waterbtnuser').value;
+    const resultsDiv = document.getElementById('sandDetails');
+
+    if (soilType === 'select' || waterSupply === 'select') {
+        alert('Please select both soil type and water supply');
+        return;
+    }
+
+    const dbRef = ref(db);
+    get(child(dbRef, `Soil Information/${soilType}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            resultsDiv.innerHTML = `
+                <h3 style="color:rgb(0, 66, 0);">Crop Information</h3>
+                <p><strong style="color:rgb(0, 66, 0);">Soil Type:</strong> ${data.Typeofsoil}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Water Supply:</strong> ${data.Watersupply}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Crop Name:</strong> ${data.Nameofcrop}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Description:</strong> ${data.descriptionofcrop}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Process 1:</strong> ${data.process1}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Process 2:</strong> ${data.process2}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Process 3:</strong> ${data.process3}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Process 4:</strong> ${data.process4}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Process 5:</strong> ${data.process5}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Process 6:</strong> ${data.process6}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Subcrop:</strong> ${data.subcrop}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Subcrop Description:</strong> ${data.descriptionofsubcrop}</p>
+            `;
+        } else {
+            resultsDiv.innerHTML = "No data available for the selected options.";
+        }
+    }).catch((error) => {
+        console.error(error);
+        resultsDiv.innerHTML = "Error retrieving data.";
+    });
+}
+
+document.getElementById('searchBtn').addEventListener('click', searchSoilInfo);
+
+
+const cropSelectuser = document.getElementById('croptypebtnuser');
+
+async function GetCroptypeuser() {
+const dbRef = ref(db);
+try {
+    const snapshot = await get(child(dbRef, 'Distributor/'));
+    if (snapshot.exists()) {
+        cropSelectuser.innerHTML = '<option value="select">Crop type</option>'; // Reset options
+        const cropTypes = snapshot.val();
+        for (const key in cropTypes) {
+            const option = document.createElement('option');
+            option.value = cropTypes[key].Nameofcrop;
+            option.textContent = cropTypes[key].Nameofcrop;
+            cropSelectuser.appendChild(option);
+        }
+    
+        cropSelectuser.disabled = false;
+    } else {
+        alert("No crop types found in the database.");
+    }
+} catch (error) {
+    console.error("Error fetching crop types:", error);
+}
+}
+
+window.addEventListener('load', GetCroptypeuser);
+
+
+const locSelectuser = document.getElementById('locationbtnuser');
+
+async function GetLoctypeuser() {
+const dbRef = ref(db);
+try {
+    const snapshot = await get(child(dbRef, 'Distributor/'));
+    if (snapshot.exists()) {
+        locSelectuser.innerHTML = '<option value="select">Location</option>'; // Reset options
+        const locTypes = snapshot.val();
+        for (const key in locTypes) {
+            const option = document.createElement('option');
+            option.value = locTypes[key].locationofcenter;
+            option.textContent = locTypes[key].locationofcenter;
+            locSelectuser.appendChild(option);
+        }
+       
+        locSelectuser.disabled = false;
+    } else {
+        alert("No  location found in the database.");
+    }
+} catch (error) {
+    console.error("Error fetching location:", error);
+}
+}
+
+window.addEventListener('load', GetLoctypeuser);
+
+function searchCenterInfo() {
+    const results = document.getElementById('distributorDetails');
+    const cropType = document.getElementById('croptypebtnuser').value;
+    const locSelectuser = document.getElementById('locationbtnuser');
+    if ( cropType=== 'select' ||  locSelectuser=== 'select') {
+        alert('Please select both soil type and water supply');
+        return;
+    }
+
+    const dbRef = ref(db);
+    get(child(dbRef, `Distributor/${cropType}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            results.innerHTML = `
+                <h3 style="color:rgb(0, 66, 0);">Distributor Information</h3>
+                <p><strong style="color:rgb(0, 66, 0);">Name of Distributor center:</strong> ${data.Companyname}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Owner Name:</strong> ${data.Ownername}</p>
+                <p><strong style="color:rgb(0, 66, 0);">Crop Name:</strong> ${data.Nameofcrop}</p>
+                <p><strong style="color:rgb(0, 66, 0);>Location of center:</strong> ${data.locationofcenter}</p>
+                <p><strong style="color:rgb(0, 66, 0);>Adress of center:</strong> ${data.Address}</p>
+                <p><strong style="color:rgb(0, 66, 0);>Phone number:</strong> ${data.Phonenumber}</p>
+            `;
+        } else {
+            results.innerHTML = "No data available for the selected options.";
+        }
+    }).catch((error) => {
+        console.error(error);
+        results.innerHTML = "Error retrieving data.";
+    });
+}
+
+document.getElementById('searchBtndis').addEventListener('click', searchCenterInfo);
+
+
+</script>
+</body>
+</html>

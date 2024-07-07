@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    
+    .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.active:hover{
+    text-decoration: underline  #F3FF90;
+    color: #F3FF90;
+}
+#profilebut i:hover{
+    color: #F3FF90;
+}
+
+@media (max-width:600px) {
+    body{
+        background-color:#97cd0e;
+    }
+    
+}
+</style>
+<body>
+    <header class="header">
+        <h2 style="text-align: center; padding-top: 2rem;">
+            Soil Farming Agent&nbsp;&nbsp;<i class="fa-solid fa-wheat-awn"></i>
+        </h2>
+        <nav class="navbar">
+            <a href="#soildetails" class="active">Soil Information</a>
+            <div class="profile">
+                <button class="contact" id="profilebut"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </nav>
+    </header>
+    <section id="contactpage1" style="display: none;">
+        <h2><i class="fa-solid fa-user" style="font-size: larger;"></i>&nbsp;Profile</h2>
+        <div>Email: <span id="loggedUserEmail"></span></div>
+        <button id="Adlogout">Logout&nbsp;<i class="fa-solid fa-right-from-bracket"></i></button>
+    </section>
+    
+    <section id="soildetails">
+        <button id="insert"><i class="fa-solid fa-circle-plus"></i>&nbsp;&nbsp;Create soil</button>
+        <button id="search"><i class="fa-solid fa-clipboard"></i>&nbsp;&nbsp;View and Update soil</button>
+        <button id="soilinfo"><i class="fa-solid fa-pencil"></i>&nbsp;&nbsp;Add Soil Information</button>
+        <button id="searchsoilinfo"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search Soil Info</button>
+        <button id="centername"><i class="fa-regular fa-building"></i>&nbsp;&nbsp;Distributor Center Info</button>
+        <button id="searchdistributorinfo"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;Search Distributor Info</button>
+    </section>
+    
+    <section id="soilinsertion" style="display: none;">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+              Back to Homepage 
+            </span>
+          </div>
+        <h2>Post Soil Information</h2>
+        <form id="insetionform">
+            <div>Posted By: <span id="loggedUserEmailForm"></span></div>
+            <label for="soiltype">Soil Type</label>
+            <input type="text" id="soiltype" required>
+            <button type="button" id="insertbut">Insert</button>
+        </form>
+    </section>
+
+    <section id="viewsoil" style="display: none;">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+              Back to Homepage 
+            </span>
+        </div>
+        <h2>View Soil</h2>
+        <input id="searchBar" type="text" placeholder="Search">
+        <select class="custom-select" id="CategorySelected" style="display: none;">
+            <option selected value="1">By Soiltype</option>
+        </select>
+        <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div id="searchResults"></div>     
+    </section>
+
+    <section id="cropcreate" style="display: none;">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+              Back to Homepage 
+            </span>
+          </div>
+        <form method='POST' id="form">
+            <h2>Create Crop</h2>
+            <select id="soiltypebtn" disabled required>
+                <option value="select" >Soil type</option>
+            </select>
+            <select id="waterbtn" required>
+                <option value="select">Water Supply</option>
+                <option>Continous Water Supply</option>
+                <option>Seasonal Rainfall</option>
+            </select>
+            <label for="crop">Crop</label>
+            <input type="text" id="crop" required>
+            <label for="cropdes">Crop Description</label>
+            <input type="text" id="cropdes" required>
+            <label for="croppro1">Crop Process 1</label>
+            <input type="text" id="croppro1" required>
+            <label for="croppro2">Crop Process 2</label>
+            <input type="text" id="croppro2" required>
+            <label for="croppro3">Crop Process 3</label>
+            <input type="text" id="croppro3" required>
+            <label for="croppro4">Crop Process 4</label>
+            <input type="text" id="croppro4" required>
+            <label for="croppro5">Crop Process 5</label>
+            <input type="text" id="croppro5" required>
+            <label for="croppro6">Crop Process 6</label>
+            <input type="text" id="croppro6" required>
+            <label for="subcrop">Sub Crop</label>
+            <input type="text" id="subcrop" required>
+            <label for="subcropdes">Sub Crop Description</label>
+            <input type="text" id="subcropdes" required>
+
+            <button type="submit" id="submitform">Submit</button>
+        </form>
+        
+    </section>
+
+    <section id="searchSection" style="display: none;">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+              Back to Homepage 
+            </span>
+          </div>
+          <h2>Crop Information</h2>
+        <input type="text" id="myInput" placeholder="Enter soil type">
+        <select class="custom-select" id="CategorySelected" style="display: none;">
+            <option selected value="1">By Soiltype</option>
+        </select>
+        <button id="searchBtn1"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div id="viewSearchResults"></div>    
+    </section>
+
+   <section id="distributioncenter" style="display: none;">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+            Back to Homepage 
+            </span>
+        </div>
+        <form method='POST' id="form2">
+            <h2>Distribution Center</h2>
+            <label for="Compname">Distributor Center Name</label>
+            <input type="text" id="Compname" required>
+            <label for="name">Owner Name</label>
+            <input type="text" id="name" required>
+            <label for="Cropbuy">Crop Name</label>
+            <input type="text" id="Cropbuy" required>
+            <label for="locationname">Location of center</label>
+            <input type="text" id="locationname" required>
+            <label for="address">Center Address</label>
+            <input type="text" id="address" required>
+            <label for="phoneno">Phone number</label>
+            <input type="tel" id="phoneno" required>
+
+            <button type="submit" id="submitform2">Submit</button>
+        </form>   
+    </section>
+   
+   <section id="searchCenter" style="display: none;">
+        <div class="popup" onclick="myFunction()"> <button onclick="showSection('soildetails')" class="back"><i class="fa-solid fa-backward"></i></button>
+            <span class="popuptext" id="myPopup">
+            Back to Homepage 
+            </span>
+        </div>
+        <h2>Distributor Information</h2>
+        
+        <input type="text" id="mycrop" placeholder="Enter crop name">
+        <select class="custom-select" id="CategorySelected" style="display: none;">
+            <option selected value="1">By croptype</option>
+        </select>
+        <button id="searchBtn2"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div id="viewcenterdetails"></div>    
+   </section>
+
+<script>
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll('header nav a');
+        const buttons = {
+            'insert': 'soilinsertion',
+            'search': 'viewsoil',
+            'soilinfo': 'cropcreate',
+            'searchsoilinfo':'searchSection',
+            'centername':'distributioncenter',
+            'searchdistributorinfo':'searchCenter'
+            // Add other buttons if needed
+        };
+
+        for (const [btnId, sectionId] of Object.entries(buttons)) {
+            document.getElementById(btnId).addEventListener('click', () => showSection(sectionId));
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                showSection(targetId);
+                navLinks.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    });
+
+    function showSection(id) {
+        document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+    }
+</script>
+    <script src="Admin_contact.js" type="module"></script>
+    <script type="module">
+       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+       import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+       import { getDatabase, ref, set, get, update, remove, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDansjoKrJPA8hDv3CqRYjPz8l2e-N2Wus",
+            authDomain: "admin-page-f6841.firebaseapp.com",
+            projectId: "admin-page-f6841",
+            storageBucket: "admin-page-f6841.appspot.com",
+            messagingSenderId: "1005432635418",
+            appId: "1:1005432635418:web:ef35f6ddb14e82e6d5d1a3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getDatabase();
+       
+        document.addEventListener('DOMContentLoaded', () => {
+            const profileBut = document.getElementById('profilebut');
+            const contactPage = document.getElementById('contactpage1');
+            const soilDetails = document.getElementById('soildetails');
+            const soilInsertion = document.getElementById('soilinsertion');
+            const soilinfo=document.getElementById('soilinfo');
+            const viewSoil = document.getElementById('viewsoil');
+            const searchviewSoil = document.getElementById('searchsoilinfo');
+            const insertBtn = document.getElementById('insertbut');
+            const searchBtn = document.getElementById('searchbtn');
+            const cropcreate=document.getElementById('cropcreate');
+            const searchPage=document.getElementById('searchSection');
+            const centerpage=document.getElementById('distributioncenter');
+            const viewsearch=document.getElementById('searchCenter');
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    document.getElementById('loggedUserEmail').textContent = user.email;
+                    document.getElementById('loggedUserEmailForm').textContent = user.email;
+                } else {
+                    window.location.href = 'Admin.htm';
+                }
+            });
+
+            document.getElementById('insert').addEventListener('click', () => {
+                soilInsertion.style.display = 'block';
+                soilDetails.style.display = 'none';
+                viewSoil.style.display = 'none';
+            });
+            
+            document.getElementById('centername').addEventListener('click', () => {
+                centerpage.style.display = 'block';
+                soilDetails.style.display = 'none';
+            });
+            document.getElementById('searchdistributorinfo').addEventListener('click', () => {
+                viewsearch.style.display = 'block';
+                soilDetails.style.display = 'none';
+            });
+            document.getElementById('search').addEventListener('click', () => {
+                soilInsertion.style.display = 'none';
+                soilDetails.style.display = 'none';
+                viewSoil.style.display = 'block';
+            });
+            soilinfo.addEventListener('click',()=>{
+                cropcreate.style.display='block';
+                soilDetails.style.display='none';
+            })
+            searchviewSoil.addEventListener('click',()=>{
+                searchPage.style.display='block';
+                soilDetails.style.display='none';
+            })
+
+            insertBtn.addEventListener('click', () => {
+                const soilType = document.getElementById('soiltype').value;
+                if (soilType.trim() === "") {
+                    alert("Please enter soil type.");
+                    return;
+                }
+
+                set(ref(db, "SoilType/" + soilType), {
+                    Soiltype: soilType 
+                })
+                .then(() => {
+                    alert("Data stored successfully");
+                    window.location.href = 'Admin_Homepage.htm';
+                })
+                .catch((error) => {
+                    alert("Unsuccessful, error: " + error);
+                });
+            });
+
+            searchBtn.addEventListener('click', () => {
+                const searchBar = document.getElementById('searchBar').value;
+                const category = document.getElementById('CategorySelected').value;
+                const dbref = ref(db);
+                debugger;
+                if (category == "1") {
+                    get(child(dbref, "SoilType/" + searchBar)).then((snapshot) => {
+                        if (snapshot.exists()) {
+                            debugger;
+                            document.getElementById('searchResults').innerHTML = `
+                                <p>Soil Type: ${snapshot.val().Soiltype}</p>
+                                <button onclick="updateSoil('${snapshot.key}')">Update</button>
+                                <button onclick="deleteSoil('${snapshot.key}')">Delete</button>
+                            `;
+                        } else {
+                            alert("No data found");
+                        }
+                    })
+                    .catch((error) => {
+                        alert("Unsuccessful, error: " + error);
+                    });
+                }
+            });
+
+            document.getElementById('Adlogout').addEventListener('click', () => {
+                signOut(auth).then(() => {
+                    window.location.href = 'Welcome.htm';
+                }).catch((error) => {
+                    alert("Error logging out: " + error.message);
+                });
+            });
+        });
+
+        window.updateSoil = (soilType) => {
+            const newSoilType = prompt("Enter new soil type:", soilType);
+            if (newSoilType && newSoilType !== soilType) {
+                const dbref = ref(db);
+                set(child(dbref, "SoilType/" + newSoilType), { Soiltype: newSoilType })
+                    .then(() => {
+                        alert("Soil type updated successfully");
+                        document.getElementById('searchResults').innerHTML = '';
+                    })
+                    .catch((error) => {
+                        alert("Unsuccessful, error: " + error);
+                    });
+                remove(child(dbref, "SoilType/" + soilType));
+            }
+        };
+
+        window.deleteSoil = (soilType) => {
+    if (confirm("Are you sure you want to delete this soil type?")) {
+        debugger;
+        const dbref = ref(db, "SoilType/" + soilType);
+        console.log("Attempting to delete soil type:", soilType, "at path:", dbref);
+
+        remove(dbref)
+            .then(() => {
+                alert("Soil type deleted successfully");
+                console.log("Soil type deleted successfully:", soilType);
+                document.getElementById('searchResults').innerHTML = '';
+                window.location.href = 'Admin_Homepage.htm';
+            })
+            .catch((error) => {
+                alert("Unsuccessful, error: " + error.message);
+                console.error("Error deleting soil type:", error);
+            });
+    }
+};
+
+
+        const soilSelect = document.getElementById('soiltypebtn');
+
+            async function GetSoiltype() {
+                const dbRef = ref(db);
+                try {
+                    const snapshot = await get(child(dbRef, 'SoilType/'));
+                    if (snapshot.exists()) {
+                        soilSelect.innerHTML = '<option value="select">Soil type</option>'; // Reset options
+                        const soilTypes = snapshot.val();
+                        for (const key in soilTypes) {
+                            const option = document.createElement('option');
+                            option.value = soilTypes[key].Soiltype;
+                            option.textContent = soilTypes[key].Soiltype;
+                            soilSelect.appendChild(option);
+                        }
+                        soilSelect.disabled = false;
+                    } else {
+                        alert("No soil types found in the database.");
+                    }
+                } catch (error) {
+                    console.error("Error fetching soil types:", error);
+                }
+            }
+
+    window.addEventListener('load',GetSoiltype);
+
+    var soilbtntype=document.getElementById('soiltypebtn');
+    var waterbtntype=document.getElementById('waterbtn');
+    var cropname=document.getElementById('crop');
+    var cropdes=document.getElementById('cropdes');
+    var process1=document.getElementById('croppro1');
+    var process2=document.getElementById('croppro2');
+    var process3=document.getElementById('croppro3');
+    var process4=document.getElementById('croppro4');
+    var process5=document.getElementById('croppro5');
+    var process6=document.getElementById('croppro6');
+    var subcrop=document.getElementById('subcrop');
+    var subcropdes=document.getElementById('subcropdes');
+    var submitbtn=document.getElementById('submitform');
+
+
+    var Compname=document.getElementById('Compname');
+    var name=document.getElementById('name');
+    var Cropbuy=document.getElementById('Cropbuy');
+    var locationname=document.getElementById('locationname');
+    var address=document.getElementById('address');
+    var phoneno=document.getElementById('phoneno');
+    var submitform2=document.getElementById('submitform2');
+
+    function  Insertdataful(){
+        set(ref(db,"Soil Information/"+soilbtntype.value),{
+             Typeofsoil:soilbtntype.value,
+             Watersupply:waterbtntype.value,
+             Nameofcrop:cropname.value,
+             descriptionofcrop:cropdes.value,
+             process1:process1.value,
+             process2:process2.value,
+             process3:process3.value,
+             process4:process4.value,
+             process5:process5.value,
+             process6:process6.value,
+             subcrop:subcrop.value,
+             descriptionofsubcrop:subcropdes.value
+        })
+        .then(()=>{
+            alert("Data stored successfully");
+            window.location.href = 'Admin_Homepage.htm';
+        })
+        .catch((error)=>{
+            alert("unsuccessful,error"+error);
+        });
+    }
+    submitbtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    Insertdataful();
+    });
+
+   
+   function  Insertdataful2(){
+        set(ref(db,"Distributor/"+Cropbuy.value),{
+             Companyname:Compname.value,
+             Ownername:name.value,
+             Nameofcrop:Cropbuy.value,
+             locationofcenter:locationname.value,
+             Address:address.value,
+             Phonenumber:phoneno.value
+        })
+        .then(()=>{
+            alert("Data stored successfully");
+            window.location.href = 'Admin_Homepage.htm';
+        })
+        .catch((error)=>{
+            alert("unsuccessful,error"+error);
+        });
+    }
+    
+    submitform2.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    Insertdataful2();
+    });
+
+
+    document.getElementById('searchBtn1').addEventListener('click', async () => {
+                const searchBar = document.getElementById('myInput').value;
+                const category = document.getElementById('CategorySelected').value;
+                const dbref = ref(db);
+
+                if (category == "1") {
+                    debugger;
+                    try {
+                        const snapshot = await get(child(dbref, "Soil Information/" + searchBar));
+
+                        if (snapshot.exists()) {
+                            const soilData = snapshot.val();
+                            document.getElementById('viewSearchResults').innerHTML = `
+                                <form id="updateSoilForm">
+                                    <label for="soilType">Soil Type:</label>
+                                    <input type="text" id="soilType" value="${soilData.Typeofsoil}" required>
+                                    <label for="waterSupply">Water Supply:</label>
+                                    <input type="text" id="waterSupply" value="${soilData.Watersupply}" required>
+                                    <label for="cropName">Crop Name:</label>
+                                    <input type="text" id="cropName" value="${soilData.Nameofcrop}" required>
+                                    <label for="cropDes">Description of Crop:</label>
+                                    <input type="text" id="cropDes" value="${soilData.descriptionofcrop}" required>
+                                    <label for="process1">Process 1:</label>
+                                    <input type="text" id="process1" value="${soilData.process1}" required>
+                                    <label for="process2">Process 2:</label>
+                                    <input type="text" id="process2" value="${soilData.process2}" required>
+                                    <label for="process3">Process 3:</label>
+                                    <input type="text" id="process3" value="${soilData.process3}" required>
+                                    <label for="process4">Process 4:</label>
+                                    <input type="text" id="process4" value="${soilData.process4}" required>
+                                    <label for="process5">Process 5:</label>
+                                    <input type="text" id="process5" value="${soilData.process5}" required>
+                                    <label for="process6">Process 6:</label>
+                                    <input type="text" id="process6" value="${soilData.process6}" required>
+                                    <label for="subCrop">Sub Crop:</label>
+                                    <input type="text" id="subCrop" value="${soilData.subcrop}" required>
+                                    <label for="subCropDes">Description of Sub Crop:</label>
+                                    <input type="text" id="subCropDes" value="${soilData.descriptionofsubcrop}" required>
+                                    <button type="submit"id="update">Update</button>
+                                </form>
+                                <button onclick="deleteSoilInfo('${snapshot.key}')" id="delete">Delete</button>
+                            `;
+
+            document.getElementById('updateSoilForm').addEventListener('submit', async (e) => {
+                                e.preventDefault();
+
+                                const updatedData = {
+                                    Typeofsoil: document.getElementById('soilType').value,
+                                    Watersupply: document.getElementById('waterSupply').value,
+                                    Nameofcrop: document.getElementById('cropName').value,
+                                    descriptionofcrop: document.getElementById('cropDes').value,
+                                    process1: document.getElementById('process1').value,
+                                    process2: document.getElementById('process2').value,
+                                    process3: document.getElementById('process3').value,
+                                    process4: document.getElementById('process4').value,
+                                    process5: document.getElementById('process5').value,
+                                    process6: document.getElementById('process6').value,
+                                    subcrop: document.getElementById('subCrop').value,
+                                    descriptionofsubcrop: document.getElementById('subCropDes').value,
+                                };
+
+                                try {
+                                    await update(ref(db, "Soil Information/" + searchBar), updatedData);
+                                    alert('Soil information updated successfully!');
+                                } catch (error) {
+                                    alert('Error updating soil information: ' + error.message);
+                                }
+                            });
+
+                        } else {
+                            alert("No data found");
+                        }
+                    } catch (error) {
+                        alert("Unsuccessful, error: " + error.message);
+                    }
+                }
+            });
+
+    window.deleteSoilInfo = (soilType) => {
+    if (confirm("Are you sure you want to delete this soil type?")) {
+        const dbref = ref(db);
+        remove(child(dbref, "Soil Information/" + soilType))
+            .then(() => {
+                alert("Soil type deleted successfully");
+                document.getElementById('viewSearchResults').innerHTML = ''; // Clear search results
+                window.location.href = 'Admin_Homepage.htm'; // Replace with your homepage URL
+            })
+            .catch((error) => {
+                alert("Unsuccessful, error: " + error);
+            });
+    }
+};
+
+
+document.getElementById('searchBtn2').addEventListener('click', async () => {
+                const searchBar = document.getElementById('mycrop').value;
+                const category = document.getElementById('CategorySelected').value;
+                const dbref = ref(db);
+
+                if (category == "1") {
+                    debugger;
+                    try {
+                        const snapshot = await get(child(dbref, "Distributor/" + searchBar));
+
+                        if (snapshot.exists()) {
+                            const cropData = snapshot.val();
+                            document.getElementById('searchCenter').innerHTML = `
+                                <form id="updateCropForm">
+                                    <label for="Compname">Name of Distributor center:</label>
+                                    <input type="text" id="Compname" value="${cropData.Companyname}" required>
+                                    <label for="name">Owner Name:</label>
+                                    <input type="text" id="name" value="${cropData.Ownername}" required>
+                                    <label for="Cropbuy">Crop Name:</label>
+                                    <input type="text" id="Cropbuy" value="${cropData.Nameofcrop}" required>
+                                    <label for="locationname">Location of center:</label>
+                                    <input type="text" id="locationname" value="${cropData.locationofcenter}" required>
+                                    <label for="address">Adress of center:</label>
+                                    <input type="text" id="address" value="${cropData.Address}" required>
+                                    <label for="phoneno">Phone number:</label>
+                                    <input type="tel" id="phoneno" value="${cropData.Phonenumber}" required>
+                                    <button type="submit"id="update2">Update</button>
+                                </form>
+                                <button onclick="deleteCrop('${snapshot.key}')" id="delete2">Delete</button>
+                            `;
+
+            document.getElementById('updateCropForm').addEventListener('submit', async (e) => {
+                                e.preventDefault();
+
+                                const updatedData = {
+                                    Companyname: document.getElementById('Compname').value,
+                                    Ownername: document.getElementById('name').value,
+                                    Nameofcrop: document.getElementById('Cropbuy').value,
+                                    locationofcenter: document.getElementById('locationname').value,
+                                    Address: document.getElementById('address').value,
+                                    Phonenumber: document.getElementById('phoneno').value
+                                };
+
+                                try {
+                                    await update(ref(db, "Distributor/" + searchBar), updatedData);
+                                    alert('Details updated successfully!');
+                                } catch (error) {
+                                    alert('Error updating distributor information: ' + error.message);
+                                }
+                            });
+
+                        } else {
+                            alert("No data found");
+                        }
+                    } catch (error) {
+                        alert("Unsuccessful, error: " + error.message);
+                    }
+                }
+            });
+
+            window.deleteCrop = (Cropbuy) => {
+            if (confirm("Are you sure you want to delete this Distributor information?")) {
+        const dbref = ref(db);
+        remove(child(dbref, "Distributor/" + Cropbuy))
+            .then(() => {
+                alert("Data deleted successfully");
+                // document.getElementById('viewcenterdetails').innerHTML = ''; // Clear search results
+                window.location.href = 'Admin_Homepage.htm'; // Replace with your homepage URL
+            })
+            .catch((error) => {
+                alert("Unsuccessful, error: " + error);
+            });
+    }
+};
+
+
+    </script>
+</body>
+</html>
